@@ -1,6 +1,10 @@
 # Aavishkar IOT Hackathon
+This is the demo of our frontend
 
 ![demo](./demo.gif)
+
+To view the demo of how the dustbin sweeps the waste and picks it up on its own click:
+https://drive.google.com/open?id=1lRRQbL9k4dgNGdNXnpt4H-QnX99c0k9T
 
 ## Building
 
