@@ -10,8 +10,8 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 
 SCOPES = 'https://www.googleapis.com/auth/spreadsheets.readonly'
 
-SPREADSHEET_ID = '16AAvGCg3FS_s9I0aZbg_T-5_94vfiRaAkSrGb1EFT_s'
-RANGE_NAME = 'B2:B2'
+SPREADSHEET_ID = '1jGZRuO_YLcH7-vkzgmwn-Z7SaIVyXjEYp3UcT9yMnVM'
+RANGE_NAME = 'B7:B7'
 
 
 def main():
