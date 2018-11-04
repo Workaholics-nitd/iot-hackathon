@@ -9,3 +9,6 @@ def get_percentage(request):
 
 def get_percentage_value(request):
     return HttpResponse(main())
+
+def all_dustbins(request):
+    return render(request, 'datavis/dustbins.html')
