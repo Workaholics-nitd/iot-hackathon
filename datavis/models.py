@@ -1,3 +1,7 @@
 from django.db import models
 
-# Create your models here.
+
+class StorePercentage(models.Model):
+    dustbin_id = models.CharField(max_length=200)
+    percentage = models.IntegerField('percentage filled')
+    collect_time = models.DateTimeField('time collected')
