@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .show{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 2rem;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Data Visualization</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-120952687-1');
+    </script>
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo center">Dashboard</a>
+            <ul class="left hide-on-med-and-down">
+            </ul>
+        </div>
+    </nav>
+    <div>
+
+            <div class ="card col waves-effect waves-block waves-light hoverable pad">
+                <div class="card-title">Filled Up (in %)</div>
+                <div id="humidity"></div>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+    createHumidity();
+
+    function getData(cnt) {
+        if (cnt == 1){ // for the first instance, return %age
+            return {{ percentage }};
+        }
+        $.ajax({ // else make ajax query
+            method: "GET",
+            url: "/get_val/",
+            data: {},
+            success: function(data) {
+                console.log(data);
+                percentage = data;
+            },
+        })
+        return percentage;
+    };
+
+    var pre_layout = {
+        paper_bgcolor: 'white',
+        font: {
+            family :  'Roboto',
+            size   :  12,
+            color  :  '#444'
+        },
+        width: 600,
+        height: 400,
+        xaxis: {
+            type: "date",
+            tickformat: "%X", //to display time formatted as hh:mm:ss
+            showline: false,
+            autotick: true,
+            gridcolor: 'rgb(238, 238, 238)',
+            gridwidth: 1,
+            showgrid:  true,
+            zerolinecolor: '#444',
+            zerolinewidth: 1,
+            zeroline:  true,
+            anchor:    'y1',
+            
+        },
+        yaxis: {
+            rangemode: "nonnegative",
+            titlefont: {
+                family :  'Roboto',
+                size   :  12,
+                color  :  '#444'
+            },
+            anchor:    'x1',
+            range: [0, 100],
+        },
+    };
+
+
+    function createHumidity(){
+        var tempDiv = document.getElementById('humidity');
+
+        var traceA = {
+            x: [0],
+            y: [0],
+            type: 'scatter'
+        };
+
+        var data = [traceA];
+    
+        var layout = pre_layout;
+        
+        Plotly.plot( tempDiv, data );
+        
+        var cnt = 1;
+        var interval = setInterval(function(){
+
+            Plotly.extendTraces(tempDiv,{
+                x: [[cnt]],
+                y: [[getData(cnt)]]
+            },[0],10);
+
+            console.log(getData());
+
+            cnt ++;
+        },10000);
+    }
+    </script>
+</body>
+</html>
