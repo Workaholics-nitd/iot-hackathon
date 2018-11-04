@@ -75,10 +75,10 @@ notifications describing it's status. Now who does not want such a world class s
 
 ## Team members:
 
-1. Sarnava Konar-
-2. Ayan Banerjee-
-3. Revanth Reddy-
-4. Sai Vara Prasad
+1. Sarnava Konar-https://github.com/sarnava1
+2. Ayan Banerjee-https://github.com/ayan-b
+3. Revanth Reddy-https://github.com/revanth-reddy
+4. Sai Vara Prasad-https://github.com/Saivaraprasad
 
 ## License
     
