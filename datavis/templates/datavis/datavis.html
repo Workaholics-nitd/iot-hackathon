@@ -1,9 +1,14 @@
 {% include "datavis/base.html" %}
     <div class="">
-        <div class ="card col waves-effect waves-block waves-light hoverable pad">
+        <br><br><br>
+        <h3><span class="value">{{percentage}}% </span>filled</h3>
+        <div class="progress">
+            <div class="determinate" style="width: {{percentage}}%"></div>
+        </div>
+        <br><br>
+        <div class = "card col waves-effect waves-block waves-light hoverable pad">
             <div class="card-title">Filled Up (in %)</div>
             <div id="humidity"></div>
-            </div>
         </div>
     </div>
 {% include "datavis/footer.html" %}
@@ -11,7 +16,9 @@
     createHumidity();
 
     function getData(cnt) {
-        if (cnt == 1){ // for the first instance, return %age
+        if (cnt == 0 || cnt == 1){ // for the first instance, return %age
+            $(".value").html({{ percentage }} + '% ');
+            $(".determinate").css('width', {{ percentage }} + "% ");
             return {{ percentage }};
         }
         $.ajax({ // else make ajax query
@@ -23,6 +30,8 @@
                 percentage = data;
             },
         })
+        $(".determinate").css('width', percentage + "%");
+        $(".value").html(percentage + "% ");
         return percentage;
     };
 
