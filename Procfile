@@ -1,0 +1,1 @@
+web: gunicorn dustbin.wsgi --log-file -

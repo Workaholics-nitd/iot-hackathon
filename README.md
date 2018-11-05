@@ -76,10 +76,10 @@ notifications describing its status. Now, who does not want such a world-class s
 
 ## Team Members
 
-1. [Sarnava Konar :octocat:](https://github.com/sarnava1)
-2. [Ayan Banerjee :octocat:](https://github.com/ayan-b)
-3. [Revanth Reddy :octocat:](https://github.com/revanth-reddy)
-4. [Sai Vara Prasad :octocat:](https://github.com/Saivaraprasad)
+1. [Sarnava Konar :octocat:](https://github.com/sarnava1) - IoT enthusiast and full stack web developer with interests in open source and competitive coding. 
+2. [Ayan Banerjee :octocat:](https://github.com/ayan-b) - Full stack web developer and 5* competitive coder. Also a open source aficionado.
+3. [Revanth Reddy :octocat:](https://github.com/revanth-reddy) - Machine learning enthusiast and full stack web developer.
+4. [Sai Vara Prasad :octocat:](https://github.com/Saivaraprasad) - Electronics and embedded systems expert.
 
 ## License
     

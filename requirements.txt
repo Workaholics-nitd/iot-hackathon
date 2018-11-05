@@ -1,3 +1,6 @@
-django~=2.1
+django==2.1
 google-api-python-client
 oauth2client
+gunicorn
+django_heroku
+whitenoise
