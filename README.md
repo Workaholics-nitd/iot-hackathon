@@ -4,7 +4,7 @@
 
 This is the demo of the frontend:
 
-![demo](./demo.gif)
+![demo](https://raw.githubusercontent.com/Workaholics-nitd/statics/master/demo.gif)
 
 To view the demo of how the dustbin sweeps the waste and picks it up on its own click [here](
 https://drive.google.com/open?id=1lRRQbL9k4dgNGdNXnpt4H-QnX99c0k9T).
