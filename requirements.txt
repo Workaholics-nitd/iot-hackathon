@@ -1,5 +1,5 @@
 django==2.1.3
-google-api-python-client
+google-api-python-client==1.7.4
 oauth2client
 gunicorn
 django_heroku
