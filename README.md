@@ -1,5 +1,7 @@
 # Aavishkar IOT Hackathon
 
+This project grabbed the first position in the hackathon! :tada: Also check out the [Arduino codes](https://github.com/Workaholics-nitd/arduino-codes).
+
 [![Build Status](https://travis-ci.org/Workaholics-nitd/iot-hackathon.svg?branch=master)](https://travis-ci.org/Workaholics-nitd/iot-hackathon)
 
 This is the demo of the frontend:
