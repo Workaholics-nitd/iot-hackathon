@@ -58,7 +58,7 @@ This is the ultimate low-cost solution to a smart dustbin. We are using the chea
 ## Hardware Design and Implementation
 
 - First, we use an ultrasonic sensor to find out how much the dustbin is filled. The sensor sends the data to Arduino which in turn sends it to the NodeMCU. The Arduino will light up the status indicators accordingly as the dustbin is filled. The NodeMCU
-sends the data to Google spreadsheet (it is used instead of YES of 3rd party services to have better control over the data).
+sends the data to Google spreadsheet (it is used instead of 3rd party services to have better control over the data).
 - Next using Google's API we take the data from the Google spreadsheet and visualize it using our own frontend. We have built a web app using Django where all the collected data will be analysed and visualized. Depending on the levels of the dustbin the admin will get notifications in his/her email. The dustbin can be monitored and controlled sitting anywhere in the world.
 
 The dustbin can also pick up waste in its own. For that, we have used a servo motor to pick up waste by sweeping the ground and another servo moto picks it up and dumps it in the dustbin.
