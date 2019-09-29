@@ -31,8 +31,8 @@ https://drive.google.com/open?id=1lRRQbL9k4dgNGdNXnpt4H-QnX99c0k9T).
 
 ## The Project
 
-This project is for the IoT hackathon. We have developed a smart and fully remote dustbin for smart waste management and disposal which can be monitored and controlled from anywhere in the world. We do not even have to monitor it as well, it 
-regularly sends us notification regarding its status, _i.e_ how much it is filled.
+We have developed a smart dustbin for waste management and waste disposal which can be monitored and controlled from anywhere in the world. We do not even have to monitor it as well, it 
+regularly sends us notification regarding its status, _i.e_ how much it is filled. Further to harness solar energy our dustbin will be solar powered to meet it's minimal energy requirements.
 
 ## Uniqueness of the idea
 
