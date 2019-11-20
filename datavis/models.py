@@ -17,7 +17,7 @@ class Comment(models.Model):
     #     Dustbin,
     #     on_delete=models.CASCADE,
     # )
-    author = models.CharField(max_length=200)
+    user = models.CharField(max_length=200)
     text = models.TextField()
     created_date = models.DateTimeField(auto_now_add=True, blank=True)
 

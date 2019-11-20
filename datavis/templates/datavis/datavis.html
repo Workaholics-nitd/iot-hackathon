@@ -1,17 +1,19 @@
 {% include "datavis/base.html" %}
-    <div class="">
+    <div class="container">
         <br>
         <a class="waves-effect waves-light btn right-align" target="_blank" href="https://www.google.com/maps/search/?api=1&query=23.549146,87.2924675">View on Map</a>
-        <h3><span class="value">{{percentage}}% </span>filled</h3>
-        <div class="progress">
-            <div class="determinate" style="width: {{percentage}}%"></div>
+        <br>
+        <div class = "card col waves-effect waves-block waves-light hoverable pad">
+            <h3><span class="value">{{percentage}}% </span>filled</h3>
+            <div class="progress">
+                <div class="determinate" style="width: {{percentage}}%"></div>
+            </div>
         </div>
         <br>
         <div class = "card col waves-effect waves-block waves-light hoverable pad">
             <div class="card-title">Filled Up (in %)</div>
             <div id="humidity"></div>
         </div>
-    </div>
 {% include "datavis/footer.html" %}
     <script>
     createHumidity();
@@ -104,28 +106,54 @@
     <!-- <div>
         <a class="waves-effect waves-light btn center-align" href="../add_comment">Report a Problem</a>
     </div> -->
-    <div class="center-align">
-        {% block content %}
-            <br> <br>
-            <h3 class="black-text">Report a Problem</h3>
-            <form method="POST" class="post-form">{% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit" class="save btn btn-default">Send</button>
-            </form>
-        {% endblock %}
+    
+    <div class = "row">
+        <div class = "col l12 m12 s12">
+            <div class = "card waves-effect waves-block waves-light hoverable pad">
+                <div id = "report" class = "card-content col s11 m11 l11">
+                    <h4>Report Problems</h4>
+                    <hr>
+                    {% block content %}
+                        <form method="POST" class="post-form">{% csrf_token %}
+                            {{ form.as_p }}
+                            <button type = "submit" class="save btn btn-default">Send</button>
+                        </form>
+                    {% endblock %}
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- Report Problem ends -->
-    <hr>
-    <h4>Reported Problems</h4>
-    {% for comment in comments.all %}
-        <div class="comment">
-            <div class="date">{{ comment.created_date }}</div>
-            <strong>{{ comment.author }}</strong> wrote
-            <p>{{ comment.text|linebreaks }}</p>
-        </div>
-    {% empty %}
-        <p>No Problems Reported!</p>
-    {% endfor %}
 
+    <br>
+    <br>
+
+    <div class = "row">
+        <div id = "reported-problems" class = "card col s12 m12 l12">
+            <h4>Reported Problems</h4>
+            <hr>
+            <br> <br>
+            <div class = "row">
+                {% for comment in comments.all %}
+                    <div class = "comment card col s11 l10 m11 hoverable z-depth-1">
+                        <!-- <div class="card-panel"> -->
+                            <small class="icon-text">
+                                <i class="material-icons tiny">date_range</i>{{ comment.created_date }}
+                            </small>
+                            <br><strong>{{ comment.author }}</strong> reported
+                            <blockquote>{{ comment.text|linebreaks }}</blockquote>
+                        <!-- </div> -->
+                    </div>
+                        {% empty %}
+                            <p>No Problems Reported!</p>
+                        {% endfor %}
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
 </body>
 </html>

@@ -43,7 +43,6 @@ def locations(request):
     names = ["Durgapur", "Asansol", "Kolkata"]
     render(request, 'datavis/locations.html', {"names": names})
 
-@login_required
 def add_comment(request):
     if request.method == "POST":
         form = CommentForm(request.POST)
