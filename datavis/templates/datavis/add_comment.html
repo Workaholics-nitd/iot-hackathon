@@ -1,0 +1,13 @@
+{% extends 'datavis/base.html' %}
+
+<div class="center-align">
+{% block content %}
+    <br> <br>
+    <h3 class="black-text">Report Problem</h3>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Send</button>
+    </form>
+{% endblock %}
+</div>
+</body>

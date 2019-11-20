@@ -14,6 +14,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic import TemplateView
+
 from datavis import views
 
 urlpatterns = [
@@ -21,4 +23,8 @@ urlpatterns = [
     path('datavis/0/', views.get_percentage, name='datavis'),
     path('get_val/', views.get_percentage_value, name='get_val'),
     path('datavis/', views.all_dustbins, name='datavis'),
+    path('', include('django.contrib.auth.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('locations/', views.locations, name='locations'),
+    path('datavis/add_comment/', views.add_comment, name='add_comment'),
 ]

@@ -3,14 +3,42 @@
 <head>
     <style>
         .show{
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Roboto, Arial, Helvetica, sans-serif;
             font-size: 2rem;
+        }
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
+
+        body {
+            background: #fff;
+        }
+
+        .input-field input[type=date]:focus + label,
+        .input-field input[type=text]:focus + label,
+        .input-field input[type=email]:focus + label,
+        .input-field input[type=password]:focus + label {
+            color: #e91e63;
+        }
+
+        .input-field input[type=date]:focus,
+        .input-field input[type=text]:focus,
+        .input-field input[type=email]:focus,
+        .input-field input[type=password]:focus {
+            border-bottom: 2px solid #e91e63;
+            box-shadow: none;
         }
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Data Visualization</title>
+    <title>Dustbin Management System</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -26,8 +54,14 @@
 <body>
     <nav>
         <div class="nav-wrapper">
-            <a href="#!" class="brand-logo center">Dashboard</a>
-            <ul class="left hide-on-med-and-down">
+            <a href="#!" class="brand-logo center">Dustbin Management System</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                {% block content %}
+                {% if user.is_authenticated %}
+                <li>Hi {{ user.username }}!</li>
+                <li><a href="{% url 'logout' %}">Log Out</a></li>
+                {% endif %}
+                {% endblock %}
             </ul>
         </div>
     </nav>
