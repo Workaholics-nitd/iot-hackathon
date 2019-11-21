@@ -1,0 +1,21 @@
+{% include "datavis/base.html" %}
+<div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>Dustbin Id</th>
+                <th>Time</th>
+                <th>Filled Up (in %)</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for hist in history.all %}
+            <tr>
+            <td>{{ hist.dustbin_id }}</td>
+            <td>{{ hist.collect_time }}</td>
+            <td>{{ hist.percentage }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>

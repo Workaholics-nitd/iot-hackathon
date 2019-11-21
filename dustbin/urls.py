@@ -27,4 +27,5 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('locations/', views.locations, name='locations'),
     path('datavis/add_comment/', views.add_comment, name='add_comment'),
+    path('datavis/view_history', views.view_history, name='view_history'),
 ]

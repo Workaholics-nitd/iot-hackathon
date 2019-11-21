@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
 
 from .collect_percentage import main
-from .models import Comment
+from .models import Comment, Dustbin
 from .forms import CommentForm
 
 
@@ -53,3 +53,7 @@ def add_comment(request):
     else:
         form = CommentForm()
     return render(request, 'datavis/add_comment.html', {'form': form})
+
+def view_history(request):
+    history = Dustbin.objects
+    return render(request, 'datavis/view_history.html', {'history': history})
