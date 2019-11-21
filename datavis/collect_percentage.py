@@ -10,8 +10,8 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 
 SCOPES = 'https://www.googleapis.com/auth/spreadsheets.readonly'
 
-SPREADSHEET_ID = '1jGZRuO_YLcH7-vkzgmwn-Z7SaIVyXjEYp3UcT9yMnVM'
-RANGE_NAME = 'B7:B7'
+SPREADSHEET_ID = '1thzF-svRUlIslOnCHdDcEoJ1e8a0S38sfqSPIGbSZYI'
+RANGE_NAME = 'B1:C'
 
 
 def main():
@@ -31,4 +31,4 @@ def main():
                                                 range=RANGE_NAME).execute()
     value = result.get('values', [])
     print(value)
-    return value[0][0]
+    return value[-1][0]
